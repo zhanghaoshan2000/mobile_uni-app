@@ -20,7 +20,8 @@
 		<view class="tab-container">
 			<view class="replace">
 				<text class="name">智慧操作</text>
-				<text class="iconfont icon-jiantou_zuoyouqiehuan"></text>
+				<text class="pattern"> {{isShow?"专家模式":"普通模式"}}</text>
+				<text class="iconfont icon-jiantou_zuoyouqiehuan" @click="bn()"></text>
 			</view>
 			<u-transition :show="show" class="transition1" mode="slide-left" :duration="duration2">
 				<u-row justify="space-between" gutter="10">
@@ -42,7 +43,7 @@
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon"  @click="gotomech()">
+							<view class="icon" @click="gotomech()">
 								<text class="iconfont icon-watuji-wajueji-chanche"></text>
 								<text class="font_icon">设备信息</text>
 							</view>
@@ -50,7 +51,7 @@
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon"  @click="gotosuer()">
+							<view class="icon" @click="gotosuer()">
 								<text class="iconfont icon-geren"></text>
 								<text class="font_icon">个人信息</text>
 							</view>
@@ -61,14 +62,14 @@
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
 							<view class="icon" @click="gotoSafe()">
-								<text class="iconfont icon-anquanxuzhiicn" ></text>
+								<text class="iconfont icon-anquanxuzhiicn"></text>
 								<text class="font_icon">安全须知</text>
 							</view>
 						</view>
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon"  @click="gotoUsework()">
+							<view class="icon" @click="gotoUsework()">
 								<text class="iconfont icon-shezhi"></text>
 								<text class="font_icon">普通数据设置</text>
 							</view>
@@ -76,8 +77,9 @@
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
-
+							<view class="icon " v-show="isShow" @click="gotowork()">
+								<text class="iconfont icon-shebei"></text>
+								<text class="font_icon">专家数据设置</text>
 							</view>
 						</view>
 					</u-col>
@@ -93,9 +95,9 @@
 				<u-swiper :list="list3" indicator indicatorMode="line" circular class="swiper"></u-swiper>
 			</u-transition>
 		</view>
-		<scrollbar height="260rpx" style="width: 100%; padding: 0;margin-left: -10px;">
+		<scrollbar height="340rpx" style="width: 100%; padding: 0;margin-left: -10px;">
 			<u-transition :show="show" class="transition" mode="slide-left" :duration="duration">
-				<view v-for="item in arr" :key="item.id" >
+				<view v-for="item in arr" :key="item.id">
 					<view class="card">
 						<view class="card_top">
 							<view class="title_card">
@@ -119,6 +121,7 @@
 								<text class="font_card" v-model="percentage">
 									已完成{{percentage}}%
 								</text>
+								<u-button type="primary" :plain="true" text="项目进度" class="statBtn" size="mini"></u-button>
 							</view>
 						</view>
 					</view>
@@ -133,7 +136,7 @@
 	export default {
 		data() {
 			return {
-				src2:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.xbgj58.com%2Fuploadfiles%2Fpictures%2Fnews%2F20200506102255_2240.jpg&refer=http%3A%2F%2Fm.xbgj58.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650177831&t=1240d7cf2747e0d29965f3999a5a7c60',
+				src2: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.xbgj58.com%2Fuploadfiles%2Fpictures%2Fnews%2F20200506102255_2240.jpg&refer=http%3A%2F%2Fm.xbgj58.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650177831&t=1240d7cf2747e0d29965f3999a5a7c60',
 				src1: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.61980.cn%2F20321%2F2021%2F0823%2F20210823nep1629708219.jpg&refer=http%3A%2F%2Fimg.61980.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650177831&t=08398c558ea80129ad746544792849ce',
 				src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2F4d%2F63%2Fbd%2F4d63bd0b3bf8cc9aa0dc3e1111646b1c.jpeg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650176073&t=d6ae7234b0bb8164676a78550c2ade9d',
 				list3: [
@@ -141,41 +144,51 @@
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
 				],
+				isShow: false,
 				show: true,
 				duration2: 900,
 				duration1: 1000,
 				duration: 1200,
 				percentage: 60,
-				arr:[1,2,3]
+				arr: [1, 2, 3]
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-			gotoplan(){
+			bn() {
+				this.isShow = !this.isShow
+			},
+			gotoplan() {
 				uni.navigateTo({
 					url: '../projectDetails/projectDetails'
 				});
 			},
-			gotomech(){
+			gotomech() {
 				uni.navigateTo({
 					url: '../projectDetails/projectDetails'
 				});
 			},
-			gotosuer(){
+			gotosuer() {
 				uni.navigateTo({
 					url: '../user/user'
 				});
 			},
-			gotoSafe(){
+			gotoSafe() {
 				uni.navigateTo({
 					url: '../safety/safety'
 				});
 			},
-			gotoUsework(){
+			gotoUsework() {
 				uni.navigateTo({
 					url: '../userworker/userworker'
+				});
+			},
+			gotowork() {
+				uni.navigateTo({
+					url: '../work/work',
+
 				});
 			}
 		}
@@ -330,7 +343,7 @@
 	.card {
 		margin: 20rpx 0;
 		width: 85%;
-		height: 190rpx;
+		// height: 190rpx;
 		padding: 20rpx;
 		background-color: #fff;
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -391,7 +404,7 @@
 			height: 80rpx;
 			display: flex;
 			align-items: center;
-			
+
 		}
 
 		.font_card {
@@ -399,5 +412,20 @@
 			color: #666666;
 		}
 
+	}
+
+	.pattern {
+		position: relative;
+		font-size: 22rpx;
+		margin-top: 10rpx;
+		margin-left: 300rpx;
+		font-weight: 600;
+		color: #007AFF;
+	}
+	.statBtn{
+		margin-top: 20rpx;
+		
+		height: 50rpx;
+		// transform: translateX(60rpx);
 	}
 </style>
