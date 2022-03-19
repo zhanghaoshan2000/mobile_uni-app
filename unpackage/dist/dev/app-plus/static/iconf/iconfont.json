@@ -1,0 +1,135 @@
+{
+  "id": "3258114",
+  "name": "智慧打桩",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "563700",
+      "name": "计划",
+      "font_class": "jihua",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "577359",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e74c",
+      "unicode_decimal": 59212
+    },
+    {
+      "icon_id": "1001740",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1345876",
+      "name": "个人信息",
+      "font_class": "geren",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "1727278",
+      "name": "09安全、保障",
+      "font_class": "anquanbaozhang",
+      "unicode": "e88c",
+      "unicode_decimal": 59532
+    },
+    {
+      "icon_id": "1727488",
+      "name": "244安装、施工-线性",
+      "font_class": "anzhuangshigong-xianxing",
+      "unicode": "e8d6",
+      "unicode_decimal": 59606
+    },
+    {
+      "icon_id": "4933354",
+      "name": "警报",
+      "font_class": "jingbao",
+      "unicode": "e73b",
+      "unicode_decimal": 59195
+    },
+    {
+      "icon_id": "5387569",
+      "name": "按钮_箭头收起",
+      "font_class": "anniu_jiantoushouqi",
+      "unicode": "eb03",
+      "unicode_decimal": 60163
+    },
+    {
+      "icon_id": "5387570",
+      "name": "按钮-箭头向右",
+      "font_class": "anniu-jiantouxiangyou",
+      "unicode": "eb04",
+      "unicode_decimal": 60164
+    },
+    {
+      "icon_id": "5387572",
+      "name": "按钮_箭头展开",
+      "font_class": "anniu_jiantouzhankai",
+      "unicode": "eb05",
+      "unicode_decimal": 60165
+    },
+    {
+      "icon_id": "5387581",
+      "name": "按钮_箭头向左",
+      "font_class": "anniu_jiantouxiangzuo",
+      "unicode": "eb06",
+      "unicode_decimal": 60166
+    },
+    {
+      "icon_id": "7958235",
+      "name": "昵称",
+      "font_class": "nicheng",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "9011933",
+      "name": "设备",
+      "font_class": "shebei",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "12975231",
+      "name": "控制器",
+      "font_class": "kongzhiqi",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "15732844",
+      "name": "挖土机-挖掘机-铲车",
+      "font_class": "watuji-wajueji-chanche",
+      "unicode": "e704",
+      "unicode_decimal": 59140
+    },
+    {
+      "icon_id": "16686557",
+      "name": "安全须知icn",
+      "font_class": "anquanxuzhiicn",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "19457211",
+      "name": "gender",
+      "font_class": "xingbie",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "22139911",
+      "name": "年龄",
+      "font_class": "nianling",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    }
+  ]
+}
