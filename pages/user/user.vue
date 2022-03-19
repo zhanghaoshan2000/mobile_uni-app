@@ -30,7 +30,7 @@
 			<text class="name">企业操作级别:</text>
 			<text class="user_message">张三</text>
 		</view>
-		<u-button type="primary" text="退出登录" class="btn"></u-button>
+		<u-button type="primary" text="退出登录" class="btn" @click="login()"></u-button>
 	</view>
 </template>
 
@@ -44,6 +44,11 @@
 		methods: {
 			click() {
 
+			},
+			login(){
+				uni.navigateTo({
+					url: '../login/login',
+				});
 			}
 		}
 	}

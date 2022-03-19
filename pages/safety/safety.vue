@@ -39,8 +39,7 @@
 	}
 </script>
 
-<style lang="scss">
-	
+<style lang="scss" scoped>
 	.warp {
 		display: flex;
 		align-items: center;
@@ -69,7 +68,7 @@
 	}
 	.btn{
 		margin-top: 100rpx;
-		width: 50%;
+		width: 200px;
 		position:relative;
 		
 		

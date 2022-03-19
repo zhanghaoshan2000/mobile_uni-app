@@ -25,8 +25,8 @@
 			</view>
 		</u-transition>
 		<u-transition :show="show" class="transition" mode="slide-left" :duration="duration1">
-			<view class="user_message">
-				<text class="font">个人信息</text>
+			<view class="user_message"  @click="gotosuer()">
+				<text class="font" >个人信息</text>
 				<u-icon name="arrow-right" color="#F09D1B"></u-icon>
 			</view>
 		</u-transition>
@@ -68,8 +68,13 @@
 							<text class="card_name">桩定位、及送桩</text>
 							<text class="card_time">预计完成时间</text>
 							<text class="card_state" v-model="state">完成状态：{{state}}</text>
+							<text class="card_time" v-model="percentage1">工作完成度{{percentage1}}%</text>
 						</view>
 						<view class="project_user">
+							
+						<view class="line" v-model="percentage1">
+							{{percentage1}}    %
+						</view>
 							<text class="user" v-model="name">负责人签名:{{name}}</text>
 						</view>
 					</view>
@@ -97,13 +102,19 @@
 				show: true,
 				duration: 1000,
 				duration1: 1200,
-				duration2: 1400
+				duration2: 1400,
+				percentage1:40,
 			}
 		},
 		methods: {
 			sectionChange(index) {
 				this.current = index;
-			}
+			},
+			gotosuer(){
+				uni.navigateTo({
+					url: '../user/user'
+				});
+			},
 
 
 		}
@@ -270,4 +281,14 @@
 		color: #808080;
 		padding: 4rpx;
 	}
+	.line{
+		display: flex;
+		width:200rpx;
+		height: 100rpx;
+		align-items: center;
+		font-size: 60rpx;
+		justify-content: center;
+		
+	}
+
 </style>

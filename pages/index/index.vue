@@ -14,7 +14,7 @@
 				</view>
 			</view>
 			<view class="post">
-				<u-button type="success" :plain="true" text="查看项目进度" class="btn"></u-button>
+				<u-button type="success" :plain="true" text="查看项目进度" class="btn" @click="gotoplan()"></u-button>
 			</view>
 		</view>
 		<view class="tab-container">
@@ -26,7 +26,7 @@
 				<u-row justify="space-between" gutter="10">
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
+							<view class="icon" @click="gotoplan()">
 								<text class="iconfont icon-jihua"></text>
 								<text class="font_icon">施工计划</text>
 							</view>
@@ -42,7 +42,7 @@
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
+							<view class="icon"  @click="gotomech()">
 								<text class="iconfont icon-watuji-wajueji-chanche"></text>
 								<text class="font_icon">设备信息</text>
 							</view>
@@ -50,7 +50,7 @@
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
+							<view class="icon"  @click="gotosuer()">
 								<text class="iconfont icon-geren"></text>
 								<text class="font_icon">个人信息</text>
 							</view>
@@ -60,15 +60,15 @@
 				<u-row justify="space-between" gutter="10">
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
-								<text class="iconfont icon-anquanxuzhiicn"></text>
+							<view class="icon" @click="gotoSafe()">
+								<text class="iconfont icon-anquanxuzhiicn" ></text>
 								<text class="font_icon">安全须知</text>
 							</view>
 						</view>
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
+							<view class="icon"  @click="gotoUsework()">
 								<text class="iconfont icon-shezhi"></text>
 								<text class="font_icon">普通数据设置</text>
 							</view>
@@ -153,7 +153,31 @@
 
 		},
 		methods: {
-
+			gotoplan(){
+				uni.navigateTo({
+					url: '../projectDetails/projectDetails'
+				});
+			},
+			gotomech(){
+				uni.navigateTo({
+					url: '../projectDetails/projectDetails'
+				});
+			},
+			gotosuer(){
+				uni.navigateTo({
+					url: '../user/user'
+				});
+			},
+			gotoSafe(){
+				uni.navigateTo({
+					url: '../safety/safety'
+				});
+			},
+			gotoUsework(){
+				uni.navigateTo({
+					url: '../userworker/userworker'
+				});
+			}
 		}
 	}
 </script>
