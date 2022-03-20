@@ -35,7 +35,7 @@
 					</u-col>
 					<u-col span="3">
 						<view class="demo-layout bg-purple">
-							<view class="icon">
+							<view class="icon" @click="gotoeqp()">
 								<text class="iconfont icon-kongzhiqi"></text>
 								<text class="font_icon">设置控制</text>
 							</view>
@@ -121,7 +121,7 @@
 								<text class="font_card" v-model="percentage">
 									已完成{{percentage}}%
 								</text>
-								<u-button type="primary" :plain="true" text="项目进度" class="statBtn" size="mini"></u-button>
+								<u-button type="primary" :plain="true" text="项目进度" class="statBtn" size="mini"  @click="gotoplan()"></u-button>
 							</view>
 						</view>
 					</view>
@@ -189,6 +189,11 @@
 				uni.navigateTo({
 					url: '../work/work',
 
+				});
+			},gotoeqp(){
+				uni.navigateTo({
+					url: '../eqpmtcontrol/eqpmtcontrol',
+				
 				});
 			}
 		}
